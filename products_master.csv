@@ -1,0 +1,201 @@
+Product_ID,Product_Name,Category,Sub_Category,Brand,Pack_Size,UOM
+SKU0001,Household-Cleaners-1,Household,Cleaners,Kraft,500ml,L
+SKU0002,Dairy-Milk-2,Dairy,Milk,Unilever,6pcs,L
+SKU0003,Beverages-Soda-3,Beverages,Soda,Unilever,500ml,L
+SKU0004,Frozen-Meat-4,Frozen,Meat,PrivateLabel,6pcs,L
+SKU0005,Frozen-Ready Meals-5,Frozen,Ready Meals,PepsiCo,250ml,L
+SKU0006,Personal Care-Soap-6,Personal Care,Soap,Nestle,2L,L
+SKU0007,Snacks-Cookies-7,Snacks,Cookies,Unilever,2kg,L
+SKU0008,Household-Cleaners-8,Household,Cleaners,Lulu,12pcs,L
+SKU0009,Beverages-Soda-9,Beverages,Soda,Unilever,12pcs,L
+SKU0010,Household-Paper Goods-10,Household,Paper Goods,Local,12pcs,L
+SKU0011,Bakery-Pastries-11,Bakery,Pastries,Almarai,6pcs,L
+SKU0012,Dairy-Yogurt-12,Dairy,Yogurt,Lulu,500ml,L
+SKU0013,Bakery-Pastries-13,Bakery,Pastries,Local,12pcs,L
+SKU0014,Snacks-Cookies-14,Snacks,Cookies,Kraft,6pcs,L
+SKU0015,Household-Paper Goods-15,Household,Paper Goods,PepsiCo,500g,L
+SKU0016,Bakery-Bread-16,Bakery,Bread,Kraft,2kg,L
+SKU0017,Frozen-Ready Meals-17,Frozen,Ready Meals,Unilever,12pcs,L
+SKU0018,Snacks-Chips-18,Snacks,Chips,Almarai,12pcs,L
+SKU0019,Produce-Vegetables-19,Produce,Vegetables,Local,500ml,L
+SKU0020,Personal Care-Soap-20,Personal Care,Soap,Local,1L,L
+SKU0021,Beverages-Water-21,Beverages,Water,Almarai,6pcs,L
+SKU0022,Household-Paper Goods-22,Household,Paper Goods,Nestle,250ml,L
+SKU0023,Snacks-Cookies-23,Snacks,Cookies,PrivateLabel,2L,L
+SKU0024,Snacks-Cookies-24,Snacks,Cookies,Lulu,1L,L
+SKU0025,Frozen-Ready Meals-25,Frozen,Ready Meals,PepsiCo,2L,L
+SKU0026,Frozen-Meat-26,Frozen,Meat,Nestle,1L,L
+SKU0027,Dairy-Milk-27,Dairy,Milk,Local,500ml,L
+SKU0028,Household-Paper Goods-28,Household,Paper Goods,PrivateLabel,1kg,L
+SKU0029,Household-Cleaners-29,Household,Cleaners,Lulu,6pcs,L
+SKU0030,Dairy-Yogurt-30,Dairy,Yogurt,Local,12pcs,L
+SKU0031,Frozen-Ready Meals-31,Frozen,Ready Meals,Kraft,1kg,L
+SKU0032,Produce-Fruits-32,Produce,Fruits,Lulu,500g,L
+SKU0033,Snacks-Cookies-33,Snacks,Cookies,Nestle,6pcs,L
+SKU0034,Personal Care-Shampoo-34,Personal Care,Shampoo,Almarai,6pcs,L
+SKU0035,Beverages-Water-35,Beverages,Water,PepsiCo,500ml,L
+SKU0036,Snacks-Cookies-36,Snacks,Cookies,PrivateLabel,2L,L
+SKU0037,Frozen-Ready Meals-37,Frozen,Ready Meals,Lulu,6pcs,L
+SKU0038,Produce-Fruits-38,Produce,Fruits,PrivateLabel,2kg,L
+SKU0039,Beverages-Water-39,Beverages,Water,Unilever,500g,L
+SKU0040,Frozen-Meat-40,Frozen,Meat,PrivateLabel,2L,L
+SKU0041,Produce-Vegetables-41,Produce,Vegetables,PepsiCo,12pcs,L
+SKU0042,Dairy-Cheese-42,Dairy,Cheese,PepsiCo,500ml,L
+SKU0043,Snacks-Chips-43,Snacks,Chips,Local,2kg,L
+SKU0044,Snacks-Cookies-44,Snacks,Cookies,Kraft,1L,L
+SKU0045,Dairy-Yogurt-45,Dairy,Yogurt,Local,500g,L
+SKU0046,Bakery-Pastries-46,Bakery,Pastries,Local,6pcs,L
+SKU0047,Household-Paper Goods-47,Household,Paper Goods,Kraft,250ml,L
+SKU0048,Produce-Vegetables-48,Produce,Vegetables,Nestle,500ml,L
+SKU0049,Bakery-Bread-49,Bakery,Bread,PepsiCo,2kg,L
+SKU0050,Frozen-Meat-50,Frozen,Meat,Almarai,1kg,L
+SKU0051,Bakery-Bread-51,Bakery,Bread,Lulu,2kg,L
+SKU0052,Frozen-Ready Meals-52,Frozen,Ready Meals,Unilever,6pcs,L
+SKU0053,Frozen-Meat-53,Frozen,Meat,PepsiCo,12pcs,L
+SKU0054,Produce-Fruits-54,Produce,Fruits,Unilever,6pcs,L
+SKU0055,Household-Paper Goods-55,Household,Paper Goods,Kraft,250ml,L
+SKU0056,Frozen-Meat-56,Frozen,Meat,Nestle,6pcs,L
+SKU0057,Beverages-Water-57,Beverages,Water,PrivateLabel,12pcs,L
+SKU0058,Beverages-Soda-58,Beverages,Soda,Kraft,250ml,L
+SKU0059,Beverages-Soda-59,Beverages,Soda,Nestle,2kg,L
+SKU0060,Frozen-Ready Meals-60,Frozen,Ready Meals,Unilever,1L,L
+SKU0061,Household-Paper Goods-61,Household,Paper Goods,Almarai,500g,L
+SKU0062,Snacks-Nuts-62,Snacks,Nuts,PepsiCo,6pcs,L
+SKU0063,Beverages-Juice-63,Beverages,Juice,Unilever,12pcs,L
+SKU0064,Personal Care-Shampoo-64,Personal Care,Shampoo,Almarai,500ml,L
+SKU0065,Bakery-Pastries-65,Bakery,Pastries,PrivateLabel,2kg,L
+SKU0066,Bakery-Bread-66,Bakery,Bread,Lulu,12pcs,L
+SKU0067,Household-Paper Goods-67,Household,Paper Goods,Kraft,500g,L
+SKU0068,Snacks-Chips-68,Snacks,Chips,Kraft,250ml,L
+SKU0069,Household-Paper Goods-69,Household,Paper Goods,Nestle,250ml,L
+SKU0070,Beverages-Water-70,Beverages,Water,PrivateLabel,1L,L
+SKU0071,Beverages-Juice-71,Beverages,Juice,Unilever,2kg,L
+SKU0072,Snacks-Chips-72,Snacks,Chips,Local,12pcs,L
+SKU0073,Frozen-Meat-73,Frozen,Meat,PrivateLabel,500ml,L
+SKU0074,Frozen-Meat-74,Frozen,Meat,PepsiCo,500g,L
+SKU0075,Bakery-Bread-75,Bakery,Bread,Lulu,2kg,L
+SKU0076,Household-Paper Goods-76,Household,Paper Goods,Almarai,2L,L
+SKU0077,Produce-Fruits-77,Produce,Fruits,Almarai,12pcs,L
+SKU0078,Bakery-Pastries-78,Bakery,Pastries,Lulu,250ml,L
+SKU0079,Personal Care-Shampoo-79,Personal Care,Shampoo,Unilever,12pcs,L
+SKU0080,Frozen-Meat-80,Frozen,Meat,Unilever,2kg,L
+SKU0081,Frozen-Ready Meals-81,Frozen,Ready Meals,Nestle,500g,L
+SKU0082,Produce-Fruits-82,Produce,Fruits,Local,250ml,L
+SKU0083,Snacks-Nuts-83,Snacks,Nuts,PepsiCo,1L,L
+SKU0084,Personal Care-Shampoo-84,Personal Care,Shampoo,Lulu,500ml,L
+SKU0085,Beverages-Soda-85,Beverages,Soda,Lulu,500ml,L
+SKU0086,Personal Care-Shampoo-86,Personal Care,Shampoo,PepsiCo,1kg,L
+SKU0087,Household-Paper Goods-87,Household,Paper Goods,Unilever,6pcs,L
+SKU0088,Produce-Fruits-88,Produce,Fruits,Unilever,500g,L
+SKU0089,Household-Paper Goods-89,Household,Paper Goods,Lulu,500g,L
+SKU0090,Personal Care-Shampoo-90,Personal Care,Shampoo,Lulu,500ml,L
+SKU0091,Dairy-Milk-91,Dairy,Milk,PrivateLabel,500ml,L
+SKU0092,Beverages-Soda-92,Beverages,Soda,Nestle,12pcs,L
+SKU0093,Dairy-Yogurt-93,Dairy,Yogurt,PrivateLabel,2kg,L
+SKU0094,Beverages-Water-94,Beverages,Water,Kraft,500g,L
+SKU0095,Frozen-Ready Meals-95,Frozen,Ready Meals,Nestle,2kg,L
+SKU0096,Beverages-Juice-96,Beverages,Juice,Lulu,250ml,L
+SKU0097,Beverages-Water-97,Beverages,Water,Kraft,500ml,L
+SKU0098,Frozen-Ready Meals-98,Frozen,Ready Meals,Unilever,2L,L
+SKU0099,Bakery-Bread-99,Bakery,Bread,PrivateLabel,2kg,L
+SKU0100,Produce-Vegetables-100,Produce,Vegetables,Lulu,2L,L
+SKU0101,Beverages-Soda-101,Beverages,Soda,PepsiCo,500g,L
+SKU0102,Household-Paper Goods-102,Household,Paper Goods,Nestle,1L,L
+SKU0103,Beverages-Soda-103,Beverages,Soda,PrivateLabel,6pcs,L
+SKU0104,Bakery-Bread-104,Bakery,Bread,Local,2kg,L
+SKU0105,Snacks-Chips-105,Snacks,Chips,Local,12pcs,L
+SKU0106,Produce-Vegetables-106,Produce,Vegetables,PepsiCo,500ml,L
+SKU0107,Frozen-Meat-107,Frozen,Meat,Unilever,2kg,L
+SKU0108,Personal Care-Shampoo-108,Personal Care,Shampoo,Nestle,250ml,L
+SKU0109,Dairy-Milk-109,Dairy,Milk,PepsiCo,2L,L
+SKU0110,Frozen-Meat-110,Frozen,Meat,PrivateLabel,250ml,L
+SKU0111,Beverages-Soda-111,Beverages,Soda,Almarai,2L,L
+SKU0112,Snacks-Nuts-112,Snacks,Nuts,Almarai,1L,L
+SKU0113,Frozen-Meat-113,Frozen,Meat,Lulu,500g,L
+SKU0114,Dairy-Yogurt-114,Dairy,Yogurt,Unilever,6pcs,L
+SKU0115,Household-Cleaners-115,Household,Cleaners,Nestle,1L,L
+SKU0116,Household-Cleaners-116,Household,Cleaners,Nestle,1kg,L
+SKU0117,Frozen-Ready Meals-117,Frozen,Ready Meals,PepsiCo,500ml,L
+SKU0118,Dairy-Cheese-118,Dairy,Cheese,Unilever,12pcs,L
+SKU0119,Personal Care-Shampoo-119,Personal Care,Shampoo,Lulu,250ml,L
+SKU0120,Frozen-Meat-120,Frozen,Meat,Almarai,2kg,L
+SKU0121,Frozen-Meat-121,Frozen,Meat,Lulu,250ml,L
+SKU0122,Produce-Fruits-122,Produce,Fruits,Lulu,6pcs,L
+SKU0123,Personal Care-Shampoo-123,Personal Care,Shampoo,Almarai,12pcs,L
+SKU0124,Dairy-Yogurt-124,Dairy,Yogurt,Lulu,500ml,L
+SKU0125,Dairy-Cheese-125,Dairy,Cheese,Unilever,12pcs,L
+SKU0126,Beverages-Water-126,Beverages,Water,PrivateLabel,2L,L
+SKU0127,Produce-Fruits-127,Produce,Fruits,PrivateLabel,1L,L
+SKU0128,Household-Paper Goods-128,Household,Paper Goods,Unilever,500ml,L
+SKU0129,Frozen-Meat-129,Frozen,Meat,Nestle,2kg,L
+SKU0130,Frozen-Ready Meals-130,Frozen,Ready Meals,Unilever,250ml,L
+SKU0131,Dairy-Cheese-131,Dairy,Cheese,Local,2kg,L
+SKU0132,Produce-Vegetables-132,Produce,Vegetables,Kraft,12pcs,L
+SKU0133,Frozen-Meat-133,Frozen,Meat,PepsiCo,250ml,L
+SKU0134,Snacks-Cookies-134,Snacks,Cookies,Almarai,1kg,L
+SKU0135,Bakery-Pastries-135,Bakery,Pastries,Kraft,1kg,L
+SKU0136,Snacks-Cookies-136,Snacks,Cookies,Kraft,2kg,L
+SKU0137,Household-Cleaners-137,Household,Cleaners,PrivateLabel,500ml,L
+SKU0138,Bakery-Bread-138,Bakery,Bread,Unilever,2kg,L
+SKU0139,Produce-Vegetables-139,Produce,Vegetables,Kraft,500ml,L
+SKU0140,Personal Care-Shampoo-140,Personal Care,Shampoo,Nestle,6pcs,L
+SKU0141,Produce-Vegetables-141,Produce,Vegetables,PrivateLabel,12pcs,L
+SKU0142,Snacks-Chips-142,Snacks,Chips,Almarai,12pcs,L
+SKU0143,Household-Cleaners-143,Household,Cleaners,PepsiCo,1kg,L
+SKU0144,Dairy-Cheese-144,Dairy,Cheese,Almarai,500ml,L
+SKU0145,Personal Care-Shampoo-145,Personal Care,Shampoo,PrivateLabel,500ml,L
+SKU0146,Personal Care-Soap-146,Personal Care,Soap,Nestle,2L,L
+SKU0147,Beverages-Juice-147,Beverages,Juice,Nestle,12pcs,L
+SKU0148,Dairy-Cheese-148,Dairy,Cheese,Unilever,2kg,L
+SKU0149,Personal Care-Soap-149,Personal Care,Soap,Kraft,500g,L
+SKU0150,Dairy-Cheese-150,Dairy,Cheese,Nestle,2kg,L
+SKU0151,Personal Care-Shampoo-151,Personal Care,Shampoo,PrivateLabel,250ml,L
+SKU0152,Bakery-Bread-152,Bakery,Bread,Lulu,2L,L
+SKU0153,Frozen-Ready Meals-153,Frozen,Ready Meals,Local,250ml,L
+SKU0154,Produce-Fruits-154,Produce,Fruits,Nestle,1L,L
+SKU0155,Snacks-Chips-155,Snacks,Chips,PrivateLabel,2L,L
+SKU0156,Household-Paper Goods-156,Household,Paper Goods,Lulu,1kg,L
+SKU0157,Produce-Fruits-157,Produce,Fruits,Kraft,500ml,L
+SKU0158,Personal Care-Shampoo-158,Personal Care,Shampoo,Lulu,500ml,L
+SKU0159,Household-Paper Goods-159,Household,Paper Goods,PrivateLabel,2L,L
+SKU0160,Household-Paper Goods-160,Household,Paper Goods,Lulu,2kg,L
+SKU0161,Bakery-Bread-161,Bakery,Bread,PrivateLabel,250ml,L
+SKU0162,Personal Care-Shampoo-162,Personal Care,Shampoo,Local,6pcs,L
+SKU0163,Personal Care-Shampoo-163,Personal Care,Shampoo,Kraft,250ml,L
+SKU0164,Bakery-Pastries-164,Bakery,Pastries,Unilever,1L,L
+SKU0165,Bakery-Pastries-165,Bakery,Pastries,Almarai,1kg,L
+SKU0166,Snacks-Chips-166,Snacks,Chips,Almarai,2L,L
+SKU0167,Personal Care-Shampoo-167,Personal Care,Shampoo,Kraft,500ml,L
+SKU0168,Frozen-Meat-168,Frozen,Meat,PrivateLabel,500g,L
+SKU0169,Personal Care-Soap-169,Personal Care,Soap,Nestle,6pcs,L
+SKU0170,Snacks-Nuts-170,Snacks,Nuts,PrivateLabel,2L,L
+SKU0171,Frozen-Ready Meals-171,Frozen,Ready Meals,PepsiCo,250ml,L
+SKU0172,Bakery-Pastries-172,Bakery,Pastries,Lulu,1L,L
+SKU0173,Beverages-Water-173,Beverages,Water,PrivateLabel,2L,L
+SKU0174,Produce-Vegetables-174,Produce,Vegetables,Nestle,2kg,L
+SKU0175,Beverages-Water-175,Beverages,Water,Unilever,500ml,L
+SKU0176,Produce-Vegetables-176,Produce,Vegetables,PepsiCo,1L,L
+SKU0177,Dairy-Yogurt-177,Dairy,Yogurt,Unilever,250ml,L
+SKU0178,Personal Care-Soap-178,Personal Care,Soap,Unilever,250ml,L
+SKU0179,Snacks-Chips-179,Snacks,Chips,Unilever,500g,L
+SKU0180,Produce-Fruits-180,Produce,Fruits,Unilever,1L,L
+SKU0181,Beverages-Water-181,Beverages,Water,Unilever,12pcs,L
+SKU0182,Dairy-Milk-182,Dairy,Milk,Nestle,500g,L
+SKU0183,Produce-Vegetables-183,Produce,Vegetables,Unilever,1kg,L
+SKU0184,Beverages-Water-184,Beverages,Water,Nestle,2kg,L
+SKU0185,Produce-Vegetables-185,Produce,Vegetables,Lulu,1kg,L
+SKU0186,Household-Cleaners-186,Household,Cleaners,PepsiCo,12pcs,L
+SKU0187,Snacks-Chips-187,Snacks,Chips,Nestle,12pcs,L
+SKU0188,Frozen-Ready Meals-188,Frozen,Ready Meals,Lulu,500g,L
+SKU0189,Beverages-Juice-189,Beverages,Juice,Lulu,2L,L
+SKU0190,Household-Paper Goods-190,Household,Paper Goods,Kraft,500ml,L
+SKU0191,Dairy-Cheese-191,Dairy,Cheese,PrivateLabel,6pcs,L
+SKU0192,Personal Care-Shampoo-192,Personal Care,Shampoo,Nestle,1kg,L
+SKU0193,Produce-Fruits-193,Produce,Fruits,Almarai,12pcs,L
+SKU0194,Dairy-Cheese-194,Dairy,Cheese,PepsiCo,2L,L
+SKU0195,Bakery-Pastries-195,Bakery,Pastries,PepsiCo,2L,L
+SKU0196,Bakery-Bread-196,Bakery,Bread,Almarai,250ml,L
+SKU0197,Snacks-Chips-197,Snacks,Chips,Lulu,2L,L
+SKU0198,Frozen-Ready Meals-198,Frozen,Ready Meals,Local,500ml,L
+SKU0199,Dairy-Cheese-199,Dairy,Cheese,Almarai,1L,L
+SKU0200,Household-Paper Goods-200,Household,Paper Goods,Kraft,500g,L
