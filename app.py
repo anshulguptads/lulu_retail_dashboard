@@ -5,10 +5,10 @@ from sklearn.linear_model import LinearRegression
 import numpy as np
 
 # --- Replace these with your actual GitHub raw file URLs ---
-products_url = "https://raw.githubusercontent.com/<user>/<repo>/main/products_master.csv"
-stores_url = "https://raw.githubusercontent.com/<user>/<repo>/main/stores_master.csv"
-calendar_url = "https://raw.githubusercontent.com/<user>/<repo>/main/calendar_master.csv"
-inventory_url = "https://raw.githubusercontent.com/<user>/<repo>/main/inventory_transactions.csv"
+products_url = "https://github.com/anshulguptads/lulu_retail_dashboard/blob/main/products_master.csv"
+stores_url = "https://github.com/anshulguptads/lulu_retail_dashboard/blob/main/stores_master.csv"
+calendar_url = "https://github.com/anshulguptads/lulu_retail_dashboard/blob/main/calendar_master.csv"
+inventory_url = "https://github.com/anshulguptads/lulu_retail_dashboard/blob/main/inventory_transactions.csv"
 sales_url = "https://raw.githubusercontent.com/<user>/<repo>/main/sales_transactions.csv"
 
 # --- Load data ---
