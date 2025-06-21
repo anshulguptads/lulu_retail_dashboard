@@ -1,123 +1,96 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
-from utils import load_data, compute_kpis, get_sales_timeseries, forecast_sales, top_n
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+import numpy as np
 
-st.set_page_config(
-    page_title="Lulu Retail Executive Dashboard",
-    layout="wide",
-    page_icon="🛒"
-)
+# --- Replace these with your actual GitHub raw file URLs ---
+products_url = "https://raw.githubusercontent.com/<user>/<repo>/main/products_master.csv"
+stores_url = "https://raw.githubusercontent.com/<user>/<repo>/main/stores_master.csv"
+calendar_url = "https://raw.githubusercontent.com/<user>/<repo>/main/calendar_master.csv"
+inventory_url = "https://raw.githubusercontent.com/<user>/<repo>/main/inventory_transactions.csv"
+sales_url = "https://raw.githubusercontent.com/<user>/<repo>/main/sales_transactions.csv"
 
-st.markdown(
-    """
-    <style>
-        .reportview-container {background: #f9f9fa;}
-        .sidebar .sidebar-content {background: #3e4756; color: #fff;}
-        .css-1d391kg {background-color: #fff;}
-        h1, h2, h3, .stMetricLabel {color: #264653;}
-        .block-container {padding-top: 1rem;}
-        .metric-label {font-size: 1.3rem;}
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-
-# -- Data Sources (Update these URLs with your actual GitHub raw URLs)
-url_products = "https://raw.githubusercontent.com/<user>/<repo>/main/products_master.csv"
-url_stores = "https://raw.githubusercontent.com/<user>/<repo>/main/stores_master.csv"
-url_calendar = "https://raw.githubusercontent.com/<user>/<repo>/main/calendar_master.csv"
-url_inventory = "https://raw.githubusercontent.com/<user>/<repo>/main/inventory_transactions.csv"
-url_sales = "https://raw.githubusercontent.com/<user>/<repo>/main/sales_transactions.csv"
-
-# -- Load Data
+# --- Load data ---
 @st.cache_data
-def get_data():
-    return load_data(url_products, url_stores, url_calendar, url_inventory, url_sales)
+def load_data():
+    df_products = pd.read_csv(products_url)
+    df_stores = pd.read_csv(stores_url)
+    df_calendar = pd.read_csv(calendar_url)
+    df_inventory = pd.read_csv(inventory_url)
+    df_sales = pd.read_csv(sales_url)
+    return df_products, df_stores, df_calendar, df_inventory, df_sales
 
-df_products, df_stores, df_calendar, df_inventory, df_sales = get_data()
+df_products, df_stores, df_calendar, df_inventory, df_sales = load_data()
 
-# -- Sidebar Filters
-with st.sidebar:
-    st.image('https://upload.wikimedia.org/wikipedia/commons/f/f4/Lulu_Logo.png', width=180)
-    st.header("Filters")
-    store_opt = st.selectbox("Select Store", ['All'] + df_stores['Store_Name'].tolist())
-    cat_opt = st.selectbox("Select Category", ['All'] + df_products['Category'].unique().tolist())
-    date_min = df_sales['Date'].min()
-    date_max = df_sales['Date'].max()
-    date_range = st.date_input("Select Date Range", [pd.to_datetime(date_min), pd.to_datetime(date_max)])
+st.set_page_config("Lulu Retail MVP", layout="wide", page_icon="🛒")
+st.title("Lulu Hypermarket - Retail MVP Dashboard")
 
-# -- Filter Data
-df_sales['Date'] = pd.to_datetime(df_sales['Date'])
-df_inventory['Date'] = pd.to_datetime(df_inventory['Date'])
-if store_opt != 'All':
-    store_id = df_stores[df_stores['Store_Name']==store_opt]['Store_ID'].values[0]
-    df_sales = df_sales[df_sales['Store_ID'] == store_id]
-    df_inventory = df_inventory[df_inventory['Store_ID'] == store_id]
-if cat_opt != 'All':
-    skus = df_products[df_products['Category']==cat_opt]['Product_ID']
-    df_sales = df_sales[df_sales['Product_ID'].isin(skus)]
-    df_inventory = df_inventory[df_inventory['Product_ID'].isin(skus)]
-start_date, end_date = date_range
-df_sales = df_sales[(df_sales['Date'] >= pd.to_datetime(start_date)) & (df_sales['Date'] <= pd.to_datetime(end_date))]
-df_inventory = df_inventory[(df_inventory['Date'] >= pd.to_datetime(start_date)) & (df_inventory['Date'] <= pd.to_datetime(end_date))]
+# --- KPIs ---
+total_sales = df_sales['Net_Sales_AED'].sum()
+total_units = df_sales['Units_Sold'].sum()
+unique_skus = df_sales['Product_ID'].nunique()
+stores_count = df_sales['Store_ID'].nunique()
 
-# -- KPIs
-total_sales, total_units, oos_count, avg_stock_days, promo_pct = compute_kpis(df_inventory, df_sales)
-col1, col2, col3, col4, col5 = st.columns(5)
+col1, col2, col3, col4 = st.columns(4)
 col1.metric("Total Net Sales (AED)", f"{total_sales:,.0f}")
-col2.metric("Units Sold", f"{total_units:,}")
-col3.metric("Stock Out Events", f"{oos_count:,}")
-col4.metric("Avg Days of Stock Cover", f"{avg_stock_days:.2f}")
-col5.metric("% Sales on Promo", f"{promo_pct:.1f}%")
+col2.metric("Total Units Sold", f"{total_units:,}")
+col3.metric("Active SKUs", unique_skus)
+col4.metric("Stores", stores_count)
 
-# -- Sales Trend (time-series)
-st.subheader("Sales Trends")
-sales_trend = df_sales.groupby('Date').agg({'Net_Sales_AED':'sum', 'Units_Sold':'sum'}).reset_index()
-fig1 = px.line(sales_trend, x='Date', y='Net_Sales_AED', title='Net Sales Over Time', labels={'Net_Sales_AED': 'Net Sales (AED)'})
-st.plotly_chart(fig1, use_container_width=True)
+# --- Top SKUs ---
+st.subheader("Top 10 SKUs by Net Sales")
+top_skus = df_sales.groupby('Product_ID')['Net_Sales_AED'].sum().reset_index().sort_values('Net_Sales_AED', ascending=False).head(10)
+top_skus = top_skus.merge(df_products[['Product_ID', 'Product_Name']], on='Product_ID', how='left')
 
-# -- Category Share
-cat_share = df_sales.merge(df_products[['Product_ID','Category']], on='Product_ID').groupby('Category')['Net_Sales_AED'].sum().reset_index()
-fig2 = px.pie(cat_share, values='Net_Sales_AED', names='Category', title='Sales by Category')
-st.plotly_chart(fig2, use_container_width=True)
+fig1, ax1 = plt.subplots(figsize=(8, 5))
+ax1.bar(top_skus['Product_Name'], top_skus['Net_Sales_AED'])
+ax1.set_xlabel('SKU')
+ax1.set_ylabel('Net Sales (AED)')
+ax1.set_title('Top 10 SKUs by Net Sales')
+plt.xticks(rotation=45, ha='right')
+st.pyplot(fig1)
 
-# -- Top/Bottom Performers
-st.subheader("Top/Bottom SKUs")
-col6, col7 = st.columns(2)
-with col6:
-    top_skus = top_n(df_sales, field='Net_Sales_AED', n=10, ascending=False)
-    top_skus = top_skus.merge(df_products[['Product_ID','Product_Name']], on='Product_ID')
-    st.dataframe(top_skus[['Product_ID', 'Product_Name', 'Net_Sales_AED']].rename(columns={'Net_Sales_AED': 'Total Sales (AED)'}), height=280)
-with col7:
-    bottom_skus = top_n(df_sales, field='Net_Sales_AED', n=10, ascending=True)
-    bottom_skus = bottom_skus.merge(df_products[['Product_ID','Product_Name']], on='Product_ID')
-    st.dataframe(bottom_skus[['Product_ID', 'Product_Name', 'Net_Sales_AED']].rename(columns={'Net_Sales_AED': 'Total Sales (AED)'}), height=280)
+# --- Sales Trend ---
+st.subheader("Total Net Sales Trend")
+df_sales['Date'] = pd.to_datetime(df_sales['Date'])
+sales_trend = df_sales.groupby('Date')['Net_Sales_AED'].sum().reset_index()
 
-# -- Forecasting Module
-st.subheader("Sales Forecasting (Regression Model)")
-sku_opt = st.selectbox("Select SKU for Forecasting", df_products['Product_ID'])
-store_fcast_opt = st.selectbox("Store for SKU Forecast", ['All'] + df_stores['Store_ID'].tolist())
-ts_data = get_sales_timeseries(df_sales, df_calendar, sku_opt, store=None if store_fcast_opt=='All' else store_fcast_opt)
-periods = st.slider("Forecast Period (Days)", 7, 30, 14)
-forecast, model = forecast_sales(ts_data, periods=periods)
-future_dates = pd.date_range(ts_data['Date'].max() + pd.Timedelta(days=1), periods=periods)
-fcast_df = pd.DataFrame({'Date': future_dates, 'Forecasted_Units': forecast})
-all_df = pd.concat([
-    pd.DataFrame({'Date': ts_data['Date'], 'Units': ts_data['Units_Sold'], 'Type': 'Actual'}),
-    pd.DataFrame({'Date': fcast_df['Date'], 'Units': fcast_df['Forecasted_Units'], 'Type': 'Forecast'})
-])
-fig3 = px.line(all_df, x='Date', y='Units', color='Type', title=f"Sales Forecast for {sku_opt}")
-st.plotly_chart(fig3, use_container_width=True)
+fig2, ax2 = plt.subplots(figsize=(8, 5))
+ax2.plot(sales_trend['Date'], sales_trend['Net_Sales_AED'], marker='o')
+ax2.set_xlabel('Date')
+ax2.set_ylabel('Net Sales (AED)')
+ax2.set_title('Net Sales Over Time')
+plt.xticks(rotation=45)
+st.pyplot(fig2)
 
-# -- Detailed Tables
-with st.expander("Show Detailed Sales Data"):
-    st.dataframe(df_sales.head(1000))
+# --- Simple Sales Forecast for a SKU (Linear Regression) ---
+st.subheader("Sales Forecast (Simple Linear Regression)")
+sku_selected = st.selectbox("Select SKU", df_products['Product_ID'])
+sku_sales = df_sales[df_sales['Product_ID'] == sku_selected].groupby('Date')['Units_Sold'].sum().reset_index()
+sku_sales['Date'] = pd.to_datetime(sku_sales['Date'])
+sku_sales = sku_sales.sort_values('Date')
 
-with st.expander("Show Detailed Inventory Data"):
-    st.dataframe(df_inventory.head(1000))
+if len(sku_sales) > 10:
+    sku_sales['ds'] = np.arange(len(sku_sales))
+    X = sku_sales[['ds']]
+    y = sku_sales['Units_Sold']
+    model = LinearRegression().fit(X, y)
+    future_days = 14
+    future_ds = np.arange(len(sku_sales), len(sku_sales) + future_days)
+    forecast = model.predict(future_ds.reshape(-1, 1))
+    future_dates = pd.date_range(sku_sales['Date'].max() + pd.Timedelta(days=1), periods=future_days)
+    # Plot actual and forecast
+    fig3, ax3 = plt.subplots(figsize=(8, 5))
+    ax3.plot(sku_sales['Date'], sku_sales['Units_Sold'], label='Actual Units Sold', marker='o')
+    ax3.plot(future_dates, forecast, label='Forecasted Units Sold', linestyle='--', marker='x')
+    ax3.set_xlabel('Date')
+    ax3.set_ylabel('Units Sold')
+    ax3.set_title('SKU Sales Forecast')
+    plt.xticks(rotation=45)
+    ax3.legend()
+    st.pyplot(fig3)
+else:
+    st.info("Not enough data to forecast this SKU. Select another SKU.")
 
-st.markdown("""
----
-*This executive dashboard is designed for rapid, data-driven retail decisions at scale, with interactive business intelligence and AI-driven forecasting. For customizations or expansion (e.g., Prophet, ML-based classification, multi-SKU analysis), contact your analytics lead.*
-""")
+st.write("MVP - Powered by Streamlit, Pandas & Matplotlib")
